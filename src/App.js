@@ -4,7 +4,6 @@ import "./App.css";
 import { useState } from "react";
 import fetchYoutubeVideos from "./fetchYoutubeVideos/fetchYoutubeVideos";
 import { useEffect } from "react";
-const API_KEY = "AIzaSyDWug8dCiNB5ta3hwTcFz-rAicT_sGbhJk";
 const url = "www.example.com";
 function App() {
   const [videos, setvideos] = useState();

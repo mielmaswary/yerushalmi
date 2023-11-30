@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from "./logo.svg";
+import "./App.css";
 
+import { useState } from "react";
+import fetchYoutubeVideos from "./fetchYoutubeVideos/fetchYoutubeVideos";
+import { useEffect } from "react";
+const API_KEY = "AIzaSyDWug8dCiNB5ta3hwTcFz-rAicT_sGbhJk";
+const url = "www.example.com";
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+  const [videos, setvideos] = useState();
+  useEffect(() => {
+    setvideos(fetchYoutubeVideos(url, API_KEY));
+  }, []);
+  const styles = {
+    coverImgContainer: {
+      position: "relative",
+      width: 300,
+      height: 150,
+      margin: "auto",
+    },
+    coverImage: {
+      width: "100%",
+    },
+    playBtn: {
+      position: "absolute",
+      top: "50%",
+      left: "50%",
+      transform: "translate(-50%)",
+      height: 80,
+    },
+  };
+  return <div className="App"></div>;
 }
 
 export default App;
